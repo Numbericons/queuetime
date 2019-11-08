@@ -1,7 +1,7 @@
 function queueTime(customers, n) {
   let total = 0;
   let currCustomers = [];
-  while (customers.length) {
+  while (customers.length || currCustomers.length) {
     for (let i = currCustomers.length; i < n && customers.length; i++) {
       currCustomers.push(customers.shift());  // cust = [2,3,4] curr = [1]
     };
@@ -16,11 +16,11 @@ function queueTime(customers, n) {
   return total;
 }
 
-const first = queueTime([1,2,3,4], 1);
-console.log(first);
+// const first = queueTime([1,2,3,4], 1);
+// console.log(first);
 
-const second = queueTime([2, 2, 3, 3, 4, 4], 2);
-console.log(second);
+// const second = queueTime([2, 2, 3, 3, 4, 4], 2);
+// console.log(second);
 
 const third = queueTime([1, 2, 3, 4, 5], 100);
 console.log(third);
